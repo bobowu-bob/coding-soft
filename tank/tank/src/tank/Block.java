@@ -1,0 +1,52 @@
+package tank;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class Block {// �ͦ���ê��
+	public Block(JFrame frame) { // Blcks(�غc��)�Aframe(�@�Ϊ�����)
+		// TODO Auto-generated method stub
+		int[][] arr = { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+				{ 0, 0, 0, 0, 3, 3, 3, 3, 3, 0, 0, 0, 0 }, { 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+				{ 1, 1, 1, 0, 1, 1, 2, 1, 1, 0, 2, 2, 2 }, { 0, 0, 0, 0, 1, 1, 2, 1, 1, 1, 1, 0, 0 },
+				{ 0, 0, 1, 1, 2, 2, 2, 2, 2, 1, 1, 0, 0 }, { 0, 0, 1, 1, 1, 1, 2, 1, 1, 0, 0, 0, 0 },
+				{ 2, 2, 2, 0, 1, 1, 2, 1, 1, 0, 1, 1, 1 }, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1 },
+				{ 0, 0, 0, 0, 3, 3, 3, 3, 3, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+				{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } };
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr[0].length; j++) {
+				int block_type = arr[i][j];
+//				System.out.println(arr[i][j]);
+				switch (block_type) {
+				case 0:
+					break;
+				case 1:
+					ImageIcon block_image1 = new ImageIcon("img/blocks/Cover.jpg");
+					JLabel block1 = new JLabel(block_image1);
+					block1.setSize(48, 48);
+					block1.setLocation(48 * i, 48 * j);
+					frame.getLayeredPane().add(block1, 0); // ��W�Ϥ�
+					break;
+				case 2:
+					ImageIcon block_image2 = new ImageIcon("img/blocks/Bricks.jpg");
+					JLabel block2 = new JLabel(block_image2);
+					block2.setSize(48, 48);
+					block2.setLocation(48 * i, 48 * j);
+					frame.getLayeredPane().add(block2, 0); // ���Ρuframe.getContentPane().add(block2);�v�A�|�L�k����
+					break;
+				case 3:
+					ImageIcon block_image3 = new ImageIcon("img/blocks/Wooden-crate.jpg");
+					JLabel block3 = new JLabel(block_image3);
+					block3.setSize(48, 48);
+					block3.setLocation(48 * i, 48 * j);
+					frame.getLayeredPane().add(block3, 0);
+					break;
+				default:
+					break;
+//					frame.getLayeredPane().add
+				}
+			}
+		}
+	}
+}
